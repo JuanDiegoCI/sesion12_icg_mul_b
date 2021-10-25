@@ -14,7 +14,7 @@
 	ctx.fill()
 }
 
-	function sum_Tra(a,b){
+	function SumaTransl(a,b){
 	var c = [];
 	for (i=0; i < a.length; i+=2){
 	c[i]=(a[i]+b[0])
@@ -26,15 +26,15 @@
 	var canvas = document.getElementById('canvas')
 	var ctx = canvas.getContext('2d');
 
-	var elem = [0, 0, 0, 50, 40, 50, 40, 40, 10, 40, 10, 30, 20, 30, 20, 20, 10, 20, 10, 10, 40, 10, 40, 0];
+	var LetraE = [0, 0, 0, 50, 40, 50, 40, 40, 10, 40, 10, 30, 20, 30, 20, 20, 10, 20, 10, 10, 40, 10, 40, 0];
 
 	var vec_tran = [60, 90];
 
-	var elem_trans = sum_Tra(elem, vec_tran)
+	var LetraE_trans = SumaTransl(LetraE, vec_tran)
 
-	polygon(elem, 'rgba(252,241,3)','rgba(34,157,206)', 4)
+	polygon(LetraE, 'rgba(252,241,3)','rgba(34,157,206)', 4)
 
-	polygon(elem_trans, 'black','rgba(34,157,206)', 4)
+	polygon(LetraE_trans, 'black','rgba(34,157,206)', 4)
 
 
 </script>
