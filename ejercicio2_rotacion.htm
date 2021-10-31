@@ -14,25 +14,24 @@
 	ctx.fill()
 }
 
-	function rotarobj(a,r{
+	function rotarobj(a,r){
 	var c = [];
+	var m= [Math.cos(r), -Math.sin(r),Math.sin(r), Math.cos(r)]
 	for (i=0; i < a.length; i+=2){
-		var puntorot = rotarpunto(a[i],a[i+1],r)
-		c[i]=puntorot[i==0 ? 0 :1]
+	c[i]=(a[i]*m[0]+a[i+1]*m[1])
+	c[i+1]=(a[i]*m[2]+a[i+1]*m[3])
     }
 	return c;
 }
 
-	function rotarpunto(a[i],a[i+1],r){
-	
-}
-
 	var canvas = document.getElementById('canvas')
 	var ctx = canvas.getContext('2d');
+	
+	//Por lo que el objeto rota teniendo en cuenta punto de orijen se opto por mover la figura mas a la derecha para esto se sumo 100 en las coordenadas x de la figura "LetraE"  
 
-	var LetraE = [0, 0, 0, 50, 40, 50, 40, 40, 10, 40, 10, 30, 20, 30, 20, 20, 10, 20, 10, 10, 40, 10, 40, 0];
+	var LetraE = [100, 0, 100, 50, 140, 50, 140, 40, 110, 40, 110, 30, 120, 30, 120, 20, 110, 20, 110, 10, 140, 10, 140, 0];
 
-	var rot = Math.Pi/6;
+	var rot = 7;
 
 	var LetraE_rot = rotarobj(LetraE, rot)
 
